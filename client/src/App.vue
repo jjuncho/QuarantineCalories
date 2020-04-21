@@ -5,7 +5,13 @@
     </head>
     <body>
       <NavBar />
-    </body>
+      
+      <b-row>
+      <b-col sm></b-col>
+      <b-col sm><h1>Welcome to Quarantine Calories!</h1></b-col>
+      <b-col sm></b-col>    
+      </b-row>
+      </body>
   </html>
 </template>
 
@@ -25,6 +31,7 @@ export default {
 
 html, body{
   margin: 0;
+  background-color:white;
 }
 
 #appMobile {
