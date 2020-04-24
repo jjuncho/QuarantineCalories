@@ -12,5 +12,11 @@ export default new Router({
       name: "info",
       component: () => import("./views/information")
     },
+    {
+      path: "/home",
+      alias: "/homePage",
+      name: "home",
+      component: () => import("./views/home")
+    }
   ]
 });
