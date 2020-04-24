@@ -4,8 +4,8 @@
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     </head>
     <body>
+      <NavBar />
       <b-container fluid>
-        <NavBar />
         <router-view/>
       </b-container>
     </body>
@@ -25,10 +25,6 @@ export default {
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
-
-html, body{
-  margin: 0;
-}
 
 #appMobile {
   -webkit-font-smoothing: antialiased;
