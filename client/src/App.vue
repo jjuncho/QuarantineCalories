@@ -4,18 +4,21 @@
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     </head>
     <body>
-      <NavBar />
+      <b-container fluid>
+        <NavBar />
+        <router-view/>
+      </b-container>
     </body>
   </html>
 </template>
 
 <script>
-import NavBar from './components/NavBar'
+import NavBar from './components/NavBar';
 
 export default {
   name: 'App',
   components: {
-    NavBar,
+    NavBar
   }
 }
 </script>
