@@ -20,9 +20,6 @@
       </b-row>
     </b-col>
     <b-col md="4">
-      <h2>
-        {{ this.form }}!
-      </h2>
       <button v-on:click="onClickSignup">
         Sign up!
       </button>
@@ -31,7 +28,7 @@
       </button>
       <br />
       <br />
-      <LoginForm v-if="form === 'login'"/>
+      <LoginForm v-if="this.form === 'login'"/>
       <SignUpForm v-else />
     </b-col>
     <b-col md="1" />
@@ -42,15 +39,7 @@
 import LoginForm from "./../components/loginForm"
 import SignUpForm from "./../components/signUpForm"
 
-var form = "signup";
-
-var onClickLogin = () => {
-  form = "login";
-}
-
-var onClickSignup = () => {
-  form = "signup";
-}
+var form = "login";
 
 export default {
   name: 'homeNoUser',
@@ -60,9 +49,17 @@ export default {
   },
   data () {
     return {
-      form,
-      onClickSignup,
-      onClickLogin
+      form
+    }
+  },
+  methods: {
+    onClickSignup() {
+      console.log("Changed to signup!")
+      this.form = "signup";
+    },
+    onClickLogin() {
+      console.log("Changed to login!")
+      this.form = "login";
     }
   }
 }

@@ -1,22 +1,27 @@
-<template>
-  <div>
+<template >
+  <div key="LogInForm">
+    <p>Login</p>
     <b-form>
       <b-form-group
-        id="input-group-1"
+        id="login-group-1"
         label="Email address:"
-        label-for="input-1"
+        label-for="login-email-input"
       >
         <b-form-input
-          id="input-1"
+          id="login-email-input"
           type="email"
           required
           placeholder="Enter email"
         ></b-form-input>
       </b-form-group>
 
-      <b-form-group id="input-group-2" label="Password:" label-for="input-2">
+      <b-form-group 
+        id="login-group-2" 
+        label="Password:" 
+        label-for="login-password-input"
+      >
         <b-form-input
-          id="input-2"
+          id="login-password-input"
           required
           placeholder="Enter your password"
         ></b-form-input>
