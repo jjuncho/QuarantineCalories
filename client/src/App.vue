@@ -8,7 +8,7 @@
       
       <b-row>
       <b-col sm></b-col>
-      <b-col sm><h1 id="tag id">Welcome to Quarantine Calories!</h1></b-col>
+      <b-col sm><h1>Welcome to Quarantine Calories!</h1></b-col>
       <b-col sm></b-col>    
       </b-row>
       </body>
@@ -28,7 +28,7 @@ export default {
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
-#tag id {style="color:teal;"}
+
 h1 {color: teal;}
 html, body{
   margin: 0;
