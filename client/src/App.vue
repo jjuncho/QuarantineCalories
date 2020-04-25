@@ -5,23 +5,20 @@
     </head>
     <body>
       <NavBar />
-      
-      <b-row>
-      <b-col sm></b-col>
-      <b-col sm><h1>Welcome to Quarantine Calories!</h1></b-col>
-      <b-col sm></b-col>    
-      </b-row>
-      </body>
+      <b-container fluid>
+        <router-view/>
+      </b-container>
+    </body>
   </html>
 </template>
 
 <script>
-import NavBar from './components/NavBar'
+import NavBar from './components/NavBar';
 
 export default {
   name: 'App',
   components: {
-    NavBar,
+    NavBar
   }
 }
 </script>
