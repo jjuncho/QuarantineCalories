@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 var usersSchema = new mongoose.Schema({
-    userName : {
+    username : {
         type : String,
         required : "Required"
 
@@ -14,6 +14,7 @@ var usersSchema = new mongoose.Schema({
         type : String,
         required : "Required"
     }
-});
+}, {collection : 'users'}
+);
 
 mongoose.model("users", usersSchema)

@@ -3,10 +3,13 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
 const path = require('path');
+var db=require("./app/models/index.js");
 const connection = require("./app/models");
 const UserController = require("./app/controllers/users");
-
-
+const mongoose = require("mongoose");
+const userModel = mongoose.model("users");
+const foodModel = mongoose.model("food");
+const session = require('express-session');
 
 const app = express();
 const APP_ID = process.env.APP_ID;
@@ -17,25 +20,73 @@ var corsOptions = {
   origin: "http://localhost:3000"
 };
 
+
 app.use(cors(corsOptions));
 
 app.set('view-engine', 'ejs');
-
 // parse requests of content-type - application/json
 app.use(bodyParser.json());
-
 // parse requests of content-type - application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(session({
+	secret: 'keyboard cat',
+	resave: true,
+	saveUnitialized: true
+}));
+
+
 
 // Main Homepage
 app.get("/", (req, res) => {
   // res.json({ message: "Placement for hame page" });
   res.sendFile(path.join(__dirname + '/views/index.html'));
+  
 });
 
 
+app.get('/login', function(req, res){
+	if (!req.body.username || !req.body.password){
+		res.send('login failed');
+	}else{
+
+		//implement a for loop to go through logins to find the matching login and then update the session cookie
+		var obj = JSON.parse(db.logins);
+		for (let prop in obj){
+			if(obj[prop].username == req.body.username && obj[prop].password == req.body.password){
+
+				console.log("you're logged in!");
+				
+			}
+		}
+		console.log("login failed");
+		
+		
+		res.send(db.logins);
+	}
+
+});
+
 //Renders the users on the server along with passwords
 app.use("/users", UserController);
+
+app.post("/register", (req,res) =>{
+	console.log(req.body);
+    var users = new userModel();
+    users.username = req.body.username;
+    users.password = req.body.password;
+    users.name = req.body.name;
+    users.save((err, docs)=> {
+        if(!err) {
+            res.send("Successfully registered!");
+        } else {
+            res.send(err);
+        }
+    });
+
+});
+
+app.post("/")
+
 
 
 
@@ -68,4 +119,5 @@ request(options, function (error, response) {
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}.`);
+
 });

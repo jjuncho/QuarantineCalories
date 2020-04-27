@@ -2,6 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 
 const userModel = mongoose.model("users");
+const foodModel = mongoose.model("food");
 
 const router = express.Router();
 
