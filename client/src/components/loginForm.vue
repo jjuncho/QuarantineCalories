@@ -1,6 +1,5 @@
 <template >
   <div key="LogInForm">
-    <p>Login</p>
     <b-form>
       <b-form-group
         id="login-group-1"
@@ -27,7 +26,7 @@
         ></b-form-input>
       </b-form-group>
 
-      <b-button variant="primary">Submit</b-button>
+      <b-button variant="primary">login</b-button>
     </b-form>
   </div>
 </template>

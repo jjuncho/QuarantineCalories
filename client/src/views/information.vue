@@ -20,16 +20,16 @@
       </b-row>
     </b-col>
     <b-col md="4">
-      <button v-on:click="onClickSignup">
-        Sign up!
-      </button>
-      <button v-on:click="onClickLogin">
-        Log in!
-      </button>
+      <b-tabs content-class="mt-3" fill>
+        <b-tab title="signup" active>
+          <SignUpForm />
+        </b-tab>
+        <b-tab title="login">
+          <LoginForm />
+        </b-tab>
+      </b-tabs>
       <br />
       <br />
-      <LoginForm v-if="this.form === 'login'"/>
-      <SignUpForm v-else />
     </b-col>
     <b-col md="1" />
   </b-row>
