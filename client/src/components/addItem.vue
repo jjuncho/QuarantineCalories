@@ -1,6 +1,6 @@
 <template>
   <b-container>
-    <b-row>
+    <b-row id="addItemForm">
       <b-col sm="10">
         <b-input-group size="sm" class="mb-2">
           <b-form-input 
@@ -56,8 +56,12 @@ export default {
     return {
       searchTerm: '',
       fields: ["food", "calories", "addItem"],
-      //This is a placeholder for now
-      items: [],
+      items: [
+        { food:"apple", calories:"94"},
+        { food:"orange", calories:"68"},
+        { food:"watermelon", calories:"36"},
+
+      ],
       selected: []
     }
   },
@@ -85,5 +89,7 @@ export default {
 </script>
 
 <style scoped>
-
+#addItemForm{
+  margin-top: 2.5em;
+}
 </style>

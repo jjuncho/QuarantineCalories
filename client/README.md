@@ -1,24 +1,20 @@
-# client
+# Client for Quarantine Calories
 
-## Project setup
-```
-yarn install
-```
+Welcome to Quarantine Calories, a web app used to count the calories while quarantine is going on. 
 
-### Compiles and hot-reloads for development
-```
-yarn serve
-```
+this is a ReadMe for the client setup instructions and overrall architecture.
 
-### Compiles and minifies for production
-```
-yarn build
-```
+## Setup
 
-### Lints and fixes files
-```
-yarn lint
-```
+The setup for this part is simple.
+1. Install NodeJS, and Yarn on your computer
+2. Download the packages for the client by running `yarn serve`.
+3. Comile and run the project using `yarn serve`
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+This will make sure that the client is installed and properly running on your computer.
+
+## Architecture
+
+### Entry point
+
+The entry point of this project is the 

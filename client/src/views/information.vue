@@ -56,8 +56,5 @@ export default {
 h1 {
   color: darkorange;
 }
-p {
-  color: navy;
-}
 
 </style>

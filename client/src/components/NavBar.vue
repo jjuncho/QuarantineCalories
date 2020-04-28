@@ -6,7 +6,7 @@
 
     <b-collapse id="nav-collapse" is-nav>
       <!-- Right aligned nav items -->
-      <b-navbar-nav class="ml-auto">
+      <b-navbar-nav class="ml-auto" @click="onClick">
         <b-nav-item right>
           LogOut
         </b-nav-item>
@@ -17,8 +17,28 @@
 </template>
 
 <script>
+import axios from "axios";
+import router from "./../router";
+
 export default {
-  name: "NavBar"
+  name: "NavBar",
+  methods: {
+    // Logout call
+    onClick() {
+      axios
+      .post("ENDPOINT HERE", this.form)
+        .then(res => {
+          console.log(res);
+        })
+        .catch(err => {
+          console.log("error processing your request");
+          console.log(err);
+        })
+        .finally(
+          router.push("/")
+        );
+    }
+  }
 }
 </script>
 

@@ -1,6 +1,6 @@
 <template >
   <div key="LogInForm">
-    <b-form>
+    <b-form @submit="onSubmit">
       <b-form-group
         id="login-group-1"
         label="Email address:"
@@ -23,13 +23,13 @@
         <b-form-input
           id="login-password-input"
           type="password"
-         v-model="form.password"
+          v-model="form.password"
           required
           placeholder="Enter your password"
         ></b-form-input>
       </b-form-group>
 
-      <b-button id="button1" variant="primary">login</b-button>
+      <b-button id="button1" type="submit" variant="primary">login</b-button>
     </b-form>
   </div>
 </template>
@@ -60,7 +60,10 @@ export default {
         .catch(err => {
           console.log("error processing your request");
           console.log(err);
-        });
+        })
+        .finally(
+          router.push("/home")
+        );
     },
   },
 }

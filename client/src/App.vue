@@ -5,7 +5,7 @@
     </head>
     <body>
       <NavBar />
-      <b-container fluid>
+      <b-container fluid id="main">
         <router-view/>
       </b-container>
     </body>
@@ -26,10 +26,12 @@ export default {
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
 
-h1 {color: teal;}
-html, body{
-  margin: 0;
-  background-color:white;
+h1 {
+  color: teal;
+}
+
+#main {
+  margin-top: 3em;
 }
 
 #appMobile {

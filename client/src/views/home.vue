@@ -6,8 +6,7 @@
         <b-col>
           <h1>
             Keep track of your caloric intake!
-          </h1>
-          <weeklyCal />
+          </h1>          
         </b-col>
       </b-row>
       <b-row>
@@ -22,7 +21,7 @@
               </div>
             </b-tab>
             <b-tab title="Week">
-
+              <weeklyCal />
             </b-tab>
           </b-tabs>
         </b-col>
@@ -51,7 +50,12 @@ export default {
   },
   data(){
     return {
-      dailyFoods: []
+      dailyFoods: [
+        { food:"Eggs", calories:"72" },
+        { food:"Bacon" , calories:"162" },
+        { food:"Muffin", calories:"165" },
+
+      ]
     }
   },
   methods: {

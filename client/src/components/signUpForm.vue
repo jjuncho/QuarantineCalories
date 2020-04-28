@@ -8,7 +8,6 @@
       >
         <b-form-input
           id="signup-group-1"
-          type="name"
           v-model="form.name"
           required
           placeholder="Enter name"
@@ -68,12 +67,14 @@ export default {
       .post("ENDPOINT HERE", this.form)
         .then(res => {
           console.log(res);
-          router.push("/home")
         })
         .catch(err => {
           console.log("error processing your request");
           console.log(err);
-        });
+        })
+        .finally(
+          router.push("/home")
+        );
     },
   },
 }

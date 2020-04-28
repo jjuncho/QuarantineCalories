@@ -1,59 +1,59 @@
 <template>
   <b-row>
     <b-col id="six-ago">
-      <h3>
-        {{ this.days[0].day }}
-      </h3>
+      <h6>
+        Monday
+      </h6>
       <p>
-        {{ this.days[0].cal }}
+        1903 cal
       </p>
     </b-col>
     <b-col id="five-ago">
-      <h3>
-        {{ this.days[0].day }}
-      </h3>
+      <h6>
+        Tuesday
+      </h6>
       <p>
-        {{ this.days[0].cal }}
+        2500 cal
       </p>
     </b-col>
     <b-col id="four-ago">
-      <h3>
-        {{ this.days[0].day }}
-      </h3>
+      <h6>
+        Wednesday
+      </h6>
       <p>
-        {{ this.days[0].cal }}
+        1826 cal
       </p>
     </b-col>
     <b-col id="three-ago">
-      <h3>
-        {{ this.days[0].day }}
-      </h3>
+      <h6>
+        Thursday
+      </h6>
       <p>
-        {{ this.days[0].cal }}
+        2045 cal
       </p>
     </b-col>
     <b-col id="two-ago">
-      <h3>
-        {{ this.days[0].day }}
-      </h3>
+      <h6>
+        Friday
+      </h6>
       <p>
-        {{ this.days[0].cal }}
+        1845 cal
       </p>
     </b-col>
     <b-col id="one-ago">
-      <h3>
-        {{ this.days[0].day }}
-      </h3>
+      <h6>
+        Saturday
+      </h6>
       <p>
-        {{ this.days[0].cal }}
+        1452 cal
       </p>
     </b-col>
     <b-col id="Today">
-      <h3>
-        {{ this.days[0].day }}
-      </h3>
+      <h6>
+        Sunday
+      </h6>
       <p>
-        {{ this.days[0].cal }}
+        1953 cal
       </p>
     </b-col>
   </b-row>
@@ -66,9 +66,7 @@ export default {
   name: "weekCal",
   data () {
     return {
-      days: [
-
-      ],
+      days: [],
       rawData: {}
     }
   },
@@ -85,8 +83,8 @@ export default {
     }
   },
   beforeMount() {
-    this.getData();
-    this.cleanData;
+    // this.getData();
+    // this.cleanData;
   }
 }
 </script>
