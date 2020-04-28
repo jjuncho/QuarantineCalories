@@ -19,6 +19,7 @@
                   v-bind:calories= "item.calories"
                 />
               </div>
+              <p id="calTotal"> Total calories consumed today: 399</p>
             </b-tab>
             <b-tab title="Week">
               <weeklyCal />
@@ -73,5 +74,7 @@ export default {
 </script>
 
 <style scoped>
-
+#calTotal {
+  font-weight: bold;
+}
 </style>

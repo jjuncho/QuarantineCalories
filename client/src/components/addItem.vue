@@ -2,6 +2,9 @@
   <b-container>
     <b-row id="addItemForm">
       <b-col sm="10">
+        <h4>
+          Add items that you ate today!
+        </h4>
         <b-input-group size="sm" class="mb-2">
           <b-form-input 
             type="search" 
