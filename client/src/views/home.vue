@@ -76,5 +76,6 @@ export default {
 <style scoped>
 #calTotal {
   font-weight: bold;
+  color:teal;
 }
 </style>
