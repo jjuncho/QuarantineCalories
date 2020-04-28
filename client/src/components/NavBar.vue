@@ -1,6 +1,6 @@
 <template>
   <b-navbar toggleable="lg" type="dark" variant="info">
-    <b-navbar-brand href="#">Quaratine Calories</b-navbar-brand>
+    <b-navbar-brand id="title" href="#">Quarantine Calories</b-navbar-brand>
 
     <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
@@ -34,5 +34,10 @@ export default {
 </script>
 
 <style scoped>
-
+#nav-collapse {
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
+}
+#title{
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
+}
 </style>

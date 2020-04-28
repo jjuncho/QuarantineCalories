@@ -27,7 +27,7 @@
         ></b-form-input>
       </b-form-group>
 
-      <b-button variant="primary">Submit</b-button>
+      <b-button id="button1" variant="primary">Submit</b-button>
     </b-form>
   </div>
 </template>
@@ -39,5 +39,28 @@ export default {
 </script>
 
 <style scoped>
-
+p{
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
+  color:darkorange;
+}
+#login-group-1 {
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
+  color:darkorange;
+}
+#login-group-2 {
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
+  color:darkorange;
+}
+#login-email-input {
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
+  color:darkorange;
+}
+#login-password-input {
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
+  color:navy;
+}
+#button1 {
+  color:white;
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
+}
 </style>
