@@ -68,7 +68,10 @@ mongoose.Promise = global.Promise;
 // });
 
 
-const db = mongoose.connect('mongodb://localhost:27017/loginData', {useNewUrlParser: true});
+const db = mongoose.connect('mongodb://localhost:27017/loginData', {useNewUrlParser: true}, function(err,db){
+	if(err) console.log(err);
+	console.log("connected");
+});
 
 // Main Homepage
 app.get("/", (req, res) => {
