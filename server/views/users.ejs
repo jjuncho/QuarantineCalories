@@ -1,0 +1,17 @@
+<head>
+    
+    <title>Hello, world! </title>
+    
+</head>
+<body>
+  <h1>Users</h1>
+
+<table>
+    <% for(var i = 0; i < JSON.stringify(data).length; i++) {%>
+        <tr>
+            <td><%= data[i] %></td>
+        </tr>
+   <% } %>
+</table>
+
+</body>
