@@ -26,6 +26,12 @@ export default {
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
 
+h1 {color: teal;}
+html, body{
+  margin: 0;
+  background-color:white;
+}
+
 #appMobile {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

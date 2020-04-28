@@ -5,15 +5,19 @@
       <b-row>
         <b-col>
           <h1>
-            Welcome to quarantine calories!
+            Welcome to Quarantine Calories!
           </h1>
         </b-col>
       </b-row>
       <b-row>
         <b-col>
           <p>
-            Some paragraph here explaining what is going on.
+            Sign up with Quarantine Calories to keep track of the meals and calories you are consuming each day.
+        
           </p>
+          <p>
+            Our app will allow you to select the items from a food list and will automatically calculate the calories and save the data under your profile!
+          </p>  
         </b-col>
       </b-row>
       <b-row>
@@ -53,18 +57,17 @@ export default {
     }
   },
   methods: {
-    onClickSignup() {
-      console.log("Changed to signup!")
-      this.form = "signup";
-    },
-    onClickLogin() {
-      console.log("Changed to login!")
-      this.form = "login";
-    }
+
   }
 }
 </script>
 
 <style scoped>
+h1 {
+  color: darkorange;
+}
+p {
+  color: navy;
+}
 
 </style>

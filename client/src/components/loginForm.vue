@@ -26,7 +26,7 @@
         ></b-form-input>
       </b-form-group>
 
-      <b-button variant="primary">login</b-button>
+      <b-button id="button1" variant="primary">login</b-button>
     </b-form>
   </div>
 </template>

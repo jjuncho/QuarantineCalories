@@ -8,7 +8,7 @@
     </b-col>
     <b-col>
       <b-button size="sm" variant="outline-info">
-        <b-icon icon="x" aria-hidden="true" />
+        <b-icon icon="x" aria-hidden="true"/>
       </b-button>
     </b-col>
   </b-row>  
