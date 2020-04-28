@@ -8,9 +8,15 @@ export default new Router({
   routes: [
     {
       path: "/",
-      alias: "/example",
-      name: "example",
-      component: () => import("./components/HelloWorld")
+      alias: "/information",
+      name: "info",
+      component: () => import("./views/information")
     },
+    {
+      path: "/home",
+      alias: "/homePage",
+      name: "home",
+      component: () => import("./views/home")
+    }
   ]
 });
