@@ -9,13 +9,16 @@
         <b-form-input
           id="login-email-input"
           type="email"
+          v-model="form.email"
           required
           placeholder="Enter email"
         ></b-form-input>
       </b-form-group>
 
       <b-form-group 
-        id="login-group-2" 
+        id="login-group-2"
+        type="password"
+        v-model="form.password"
         label="Password:" 
         label-for="login-password-input"
       >
@@ -33,7 +36,22 @@
 
 <script>
 export default {
-  name: 'LoginForm',
+  name: "LoginForm",
+  data() {
+    return{
+      form: {
+        email: '',
+        password: '',
+      },
+    }
+  },
+  methods: {
+    onSubmit(evt) {
+      evt.preventDefault()
+      console.log(JSON.stringify(this.form))
+      // axios.get();
+    },
+  },
 }
 </script>
 
