@@ -4,6 +4,7 @@ import App from './App.vue'
 import VueRouter from 'vue-router';
 import router from "./router.js";
 
+
 // Adding bootstrap to the project
 // See https://bootstrap-vue.js.org/ for inormation and docs
 import { BootstrapVue, BootstrapVueIcons } from 'bootstrap-vue'

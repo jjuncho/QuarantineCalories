@@ -43,22 +43,12 @@
 import LoginForm from "./../components/loginForm"
 import SignUpForm from "./../components/signUpForm"
 
-var form = "login";
-
 export default {
   name: 'homeNoUser',
   components: {
     LoginForm,
     SignUpForm
   },
-  data () {
-    return {
-      form
-    }
-  },
-  methods: {
-
-  }
 }
 </script>
 

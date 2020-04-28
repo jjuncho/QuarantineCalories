@@ -1,26 +1,15 @@
 <template >
   <div key="SignUpForm">
-    <b-form>
-      <b-form-group
-        id="signup-group-1"
-        label="Your name:"
-        label-for="input-1"
-      >
-        <b-form-input
-          id="signup-group-1"
-          type="name"
-          required
-          placeholder="Enter name"
-        ></b-form-input>
-      </b-form-group>
+    <b-form @submit="onSubmit">
       <b-form-group
         id="signup-group-2"
         label="Email address:"
-        label-for="input-2"
+        label-for="signup-group-2"
       >
         <b-form-input
           id="signup-group-2"
           type="email"
+          v-model="form.email"
           required
           placeholder="Enter email"
         ></b-form-input>
@@ -28,34 +17,52 @@
 
       <b-form-group 
         id="signup-group-3" 
-        label="Your Password:" 
+        label="Your Password:"
         label-for="input-3"
       >
         <b-form-input
           id="signup-group-3"
+          type="password"
+          v-model="form.password"
           required
           placeholder="Enter password"
         ></b-form-input>
       </b-form-group>
 
-      <b-button variant="primary">Create account</b-button>
+      <b-button type="submit" variant="primary">Create account</b-button>
     </b-form>
   </div>
 </template>
 
 <script>
+import axios from "axios";
+import router from "./../router";
+
 export default {
-  name: 'LoginForm',
-}
-</script>
-
-<style scoped>
-
-</style>
-
-<script>
-export default {
-  
+  name: 'SignUpForm',
+  data() {
+    return {
+      form: {
+        email: '',
+        password: '',
+      },
+    }
+  },
+  methods: {
+    onSubmit(evt) {
+      evt.preventDefault()
+      axios
+      .post("ENDPOINT HERE", this.form)
+        .then(res => {
+          console.log(res);
+          router.push("/home")
+        })
+        .catch(err => {
+          console.log("error processing your request");
+          console.log(err);
+        });
+    },
+  },
 }
 </script>
 
