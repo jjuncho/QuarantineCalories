@@ -17,13 +17,13 @@
 
       <b-form-group 
         id="login-group-2"
-        type="password"
-        v-model="form.password"
         label="Password:" 
         label-for="login-password-input"
       >
         <b-form-input
           id="login-password-input"
+          type="password"
+         v-model="form.password"
           required
           placeholder="Enter your password"
         ></b-form-input>
@@ -35,6 +35,9 @@
 </template>
 
 <script>
+import axios from "axios";
+import router from "./../router";
+
 export default {
   name: "LoginForm",
   data() {
@@ -48,8 +51,16 @@ export default {
   methods: {
     onSubmit(evt) {
       evt.preventDefault()
-      console.log(JSON.stringify(this.form))
-      // axios.get();
+      axios
+      .post("ENDPOINT HERE", this.form)
+        .then(res => {
+          console.log(res);
+          router.push("/home")
+        })
+        .catch(err => {
+          console.log("error processing your request");
+          console.log(err);
+        });
     },
   },
 }
