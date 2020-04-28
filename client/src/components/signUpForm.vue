@@ -2,16 +2,28 @@
   <div key="SignUpForm">
     <b-form @submit="onSubmit">
       <b-form-group
+        id="signup-group-1"
+        label="Your name:"
+        label-for="input-1"
+      >
+        <b-form-input
+          id="signup-group-1"
+          type="name"
+          v-model="form.name"
+          required
+          placeholder="Enter name"
+        ></b-form-input>
+      </b-form-group>
+      <b-form-group
         id="signup-group-2"
-        label="Email address:"
+        label="Username:"
         label-for="signup-group-2"
       >
         <b-form-input
           id="signup-group-2"
-          type="email"
-          v-model="form.email"
+          v-model="form.username"
           required
-          placeholder="Enter email"
+          placeholder="Enter username"
         ></b-form-input>
       </b-form-group>
 
@@ -43,7 +55,8 @@ export default {
   data() {
     return {
       form: {
-        email: '',
+        name: '',
+        username: '',
         password: '',
       },
     }
