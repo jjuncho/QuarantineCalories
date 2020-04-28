@@ -81,6 +81,7 @@ app.get('/logout', function(req,res){
 	req.session.destroy(function(){
 		console.log("loggedout");
 	});
+	res.send("logged out");
 });
 
 
@@ -169,7 +170,7 @@ app.post("/register", (req,res) =>{ //adds new user to the collections 'users' c
     
 });
 
-//total foods for the day (as a json object), total calories ,remove food endpoint, route if someone is already logged in
+//   route if someone is already logged in
 
 //write up instructions on setting up mongo
 
@@ -182,17 +183,37 @@ app.get("/getfoodDay", (req,res) =>{
 		var obj = JSON.parse(exports.food);
 		for (let prop in obj){
 			console.log(obj[prop]);
-			delete obj[prop]._id;
 			delete obj[prop].username;
 			delete obj[prop].__v;
 			console.log(obj[prop]);
 		}
 		res.send(obj);
-
 	})
+});
 
+app.get("/totalcaloriesDay", (req,res) =>{
+	foodModel.find({username: req.session.username, date: date},function(err, food ){
+			if(err) return console.log(err);
+			console.log(food);
+			exports.food=JSON.stringify(food);
+	}).then(function(){
+		var obj = JSON.parse(exports.food);
+		var total_calories=0;
+		for (let prop in obj){
+			total_calories += Number(obj[prop].calories);
+		}
+		res.send("total calories: " +total_calories);
+	})
+});
+
+app.post("/deletefood", (req,res) =>{
+	foodModel.findOneAndDelete({ _id: req.body._id}, function(err){
+		if (err) res.send(err);
+	})
+	res.send("item deleted");
 
 });
+
 
 app.post("/addfood",(req,res) =>{//adds food to the collections 'food' || params: food:{ITEM} NOTE: USER MUST BE LOGGED IN WITH A SESSSION FOR THIS ENDPOINT TO WOKR
 	var request = require('request');
