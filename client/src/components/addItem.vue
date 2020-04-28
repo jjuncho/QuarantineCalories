@@ -3,7 +3,11 @@
     <b-row>
       <b-col sm="10">
         <b-input-group size="sm" class="mb-2">
-          <b-form-input type="search" placeholder="Search foods"></b-form-input>
+          <b-form-input 
+            type="search" 
+            v-model="searchTerm"
+            placeholder="Search foods" 
+          />
         </b-input-group>
       </b-col>
       <b-col sm="1">
@@ -11,6 +15,8 @@
           size="sm"
           variant="info"
           class="mb-2"
+          type="submit"
+          @click="onSearch"
         >
           <b-icon icon="search" aria-hidden="true" />
         </b-button>
@@ -30,7 +36,7 @@
               size="sm" 
               variant="outline-info" 
               class="mb-2"
-              @click="newItem(row)"  
+              @click="addItem(row)"  
             >
               <b-icon icon="plus" aria-hidden="true" />
             </b-button>
@@ -42,29 +48,42 @@
 </template>
 
 <script>
+import axios from "axios";
+
 export default {
   name: "AddItemForm",
   data() {
     return {
+      searchTerm: '',
       fields: ["food", "calories", "addItem"],
       //This is a placeholder for now
-      items: [
-        { food: "Fries", calories: "number" },
-        { food: "chicken", calories: "5" }
-      ],
+      items: [],
       selected: []
     }
   },
   methods: {
-    onRowSelected(items) {
-      this.selected = items;
+    onSearch(evt){
+      evt.preventDefault();
+      axios.get("ENDPOINT HERE", this.searchTerm)
+        .then(res => {
+          this.items = res.body
+        })
+        .catch(err => {
+          console.log(err);
+        })
+        .finally(
+          console.log("sent")
+        )
     },
+
+    addItem(item) {
+      axios.post("ENDPOINT HERE", item);
+    }
+
   }
 }
 </script>
 
 <style scoped>
-.hidden_header {
-  display: none;
-}
+
 </style>

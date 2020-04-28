@@ -27,10 +27,4 @@ export default {
 </script>
 
 <style scoped>
-#nav-collapse {
-  font-family: "Comic Sans MS", "Comic Sans", cursive;
-}
-#title{
-  font-family: "Comic Sans MS", "Comic Sans", cursive;
-}
 </style>

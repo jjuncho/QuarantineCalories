@@ -35,6 +35,8 @@
 </template>
 
 <script>
+import axios from "axios";
+
 import AddItemForm from "./../components/addItem"
 import foodItem from "./../components/foodInfo"
 
@@ -46,11 +48,19 @@ export default {
   },
   data(){
     return {
-      dailyFoods: [
-        { food: "Fries", calories: "number" },
-        { food: "chicken", calories: "5" }
-      ]
+      dailyFoods: []
     }
+  },
+  methods: {
+    getDayItems() {
+      axios.get("ENDPOINT HERE")
+        .then(res => {
+          this.dailyFoods = res.body;
+        })
+    }
+  },
+  beforeMount(){
+    this.getDayItems();
   }
 }
 </script>
