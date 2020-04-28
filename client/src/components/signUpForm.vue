@@ -35,10 +35,13 @@
 </template>
 
 <script>
+import axios from "axios";
+import router from "./../router";
+
 export default {
   name: 'SignUpForm',
   data() {
-    return{
+    return {
       form: {
         email: '',
         password: '',
@@ -48,12 +51,15 @@ export default {
   methods: {
     onSubmit(evt) {
       evt.preventDefault()
-      axios.get("ENDPOINT HERE")
+      axios
+      .post("ENDPOINT HERE", this.form)
         .then(res => {
+          console.log(res);
           router.push("/home")
         })
         .catch(err => {
           console.log("error processing your request");
+          console.log(err);
         });
     },
   },
