@@ -7,6 +7,7 @@
           <h1>
             Keep track of your caloric intake!
           </h1>
+          <weeklyCal />
         </b-col>
       </b-row>
       <b-row>
@@ -39,12 +40,14 @@ import axios from "axios";
 
 import AddItemForm from "./../components/addItem"
 import foodItem from "./../components/foodInfo"
+import weeklyCal from "./../components/weeklyCalories"
 
 export default {
   name: "HomePage",
   components: {
     AddItemForm,
-    foodItem
+    foodItem,
+    weeklyCal
   },
   data(){
     return {
