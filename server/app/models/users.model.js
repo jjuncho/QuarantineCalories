@@ -17,4 +17,4 @@ var usersSchema = new mongoose.Schema({
 }, {collection : 'users'}
 );
 
-mongoose.model("users", usersSchema)
+module.exports= mongoose.model("users", usersSchema)

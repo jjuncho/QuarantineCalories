@@ -9,19 +9,16 @@ var foodSchema = new mongoose.Schema({
         type : String,
         required : "Required"
     },
-    Calories : {
+    calories : {
         type : String,
         required : "Required"
     },
-    Date :{
-        type : Date,
+    date :{
+        type : String,
         required : "Required"
     },
-    Meal :{
-        type: Number,
-        required: "Required"
-    }
+
 }, {collection : 'food'}
 );
 
-mongoose.model("food", foodSchema)
+module.exports =mongoose.model("food", foodSchema)
