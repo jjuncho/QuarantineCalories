@@ -51,3 +51,21 @@ The Home component gets the infomation of the user, and the calories and foods c
 ### Information
 
 Information is the view with no logged user. It has the name of the project, a description of the goals, and a logIn and signIn form. Both forms are in their respective components.
+
+# Server for Quarantine Calories
+
+## Setup
+
+1. Install NodeJS and Mongodb community edition with mongodb compass on your computer
+2. Download the packages for the server by running `npm install` in the server directory.
+3. Compile and run the project using 'node server.js'
+4. Set up a mongodb instance on localhost:27017 with a Document called "userData" and 2 collections called "users" and "food"
+
+This will make sure that the server is installed and properly running on your computer.
+
+## What is included in the Backend
+Endpoints for actions such as registration, login, logout, add food, get total calories for a given day based off the food you input, and delete food. 
+
+### NOTE
+There is a .env file not included in the github that contains the APP ID and the API Key necessary for the backend to make calls to the NutritionX APi. For security reasons it is not included in the public repo.
+
