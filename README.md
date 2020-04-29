@@ -11,7 +11,7 @@ This the sesction for the client setup instructions and overall architecture.
 The setup for this part is simple.
 1. Install NodeJS, and Yarn on your computer
 2. Download the packages for the client by running `yarn install`.
-3. Comile and run the project using `yarn serve`
+3. Compile and run the project using `yarn serve`
 
 This will make sure that the client is installed and properly running on your computer.
 
@@ -19,7 +19,7 @@ This will make sure that the client is installed and properly running on your co
 
 ### Entry point
 
-The entry point of this project is the <em>main.js</em>, in the client folder. In there, it loads modules that will be used thought the client. It also render the <em>App.vue</em> component.
+The entry point of this project is the <em>main.js</em>, in the client folder. In there, it loads modules that will be used through the client. It also render the <em>App.vue</em> component.
 
 The <em>App.vue</em> file is the main file for the client. It is responsible for rendering the NavBar and the Router.
 
@@ -36,7 +36,7 @@ There are two views, home and information. Each of those are under the Views fol
 
 Home is the view once the user has logged in. It has all the information of the calories. It has the components:
  * foodInfo
-    * Is the component used to render the food name a calorie for the daily food intake information.
+    * Is the component used to render the food name and calorie for the daily food intake information.
 
  * addItemForm
     * Used to add items to the daily intake.
@@ -46,7 +46,7 @@ Home is the view once the user has logged in. It has all the information of the 
     * Render the weekly caloric intake, to form the weekly table  
 
 
-The Home component gets the infomation of the user, and the calories and foods consumed before rendering the page to update. Thi way, every access has the updated information.
+The Home component gets the infomation of the user, and the calories and foods consumed before rendering the page to update. This way, every access has the updated information.
 
 ### Information
 
